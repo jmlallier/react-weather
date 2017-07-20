@@ -24,12 +24,16 @@ class SearchBar extends Component {
 		this.props.fetchWeather(this.state.term);
 		this.setState({term: ''});
 	}
+	componentDidMount(e) {
+		this.props.fetchWeather('Jacksonville');
+	}
 	
 	render() {
+		fetchWeather('Jacksonville');
 		return (
 			<form onSubmit={this.onFormSubmit} className="input-group">
 				<input
-					placeholder="Get a five-day forecast in your favorite cities"
+					placeholder="Get a five-day forecast in your favorite U.S. cities"
 					className="form-control"
 					value={this.state.term}
 					onChange={this.onInputChange}
